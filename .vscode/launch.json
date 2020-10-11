@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MaintainmeApplication<maintainme>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "jre.maintainme.maintainme.MaintainmeApplication",
+            "projectName": "maintainme",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MaintainmeApplication<maintainme>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "jre.maintainme.MaintainmeApplication",
+            "projectName": "maintainme",
+            "args": ""
+        }
+    ]
+}
