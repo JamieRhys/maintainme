@@ -81,6 +81,24 @@ public class Types {
             }
         }
 
+        public static class RAM {
+            public static enum Type {
+                SRAM("SRAM"),
+                SDRAM("SDRAM"),
+                DDR("DDR"),
+                DDR2("DDR2"),
+                DDR3("DDR3"),
+                DDR4("DDR4"),
+                DDR5("DDR5");
+
+                private final String displayValue;
+
+                private Type(String name) { this.displayValue = name; }
+
+                public String getDisplayValue() { return this.displayValue; }
+            }
+        }
+
         public static class OS {
             public static enum Type {
                 WIN,
@@ -168,44 +186,6 @@ public class Types {
                     return "MIDI";
                 default:
                     return "Unknown";
-            }
-        }
-    }
-
-    public static class RAM {
-        public static enum Type {
-            SRAM,
-            SDRAM,
-            DDR,
-            DDR2,
-            DDR3,
-            DDR4,
-            DDR5
-        }
-
-        /**
-         * Returns the type of RAM as a string
-         * @param type
-         * @return
-         */
-        public static final String getRamType(Type type) {
-            switch(type) {
-                case SRAM:
-                    return "SRAM";
-                case SDRAM:
-                    return "SDRAM";
-                case DDR:
-                    return "DDR";
-                case DDR2:
-                    return "DDR2";
-                case DDR3:
-                    return "DDR3";
-                case DDR4:
-                    return "DDR4";
-                case DDR5:
-                    return "DDR5";
-                default:
-                    return "Unkown";
             }
         }
     }

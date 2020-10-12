@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import jre.maintainme.entities.hardware.EntryPC;
 import jre.maintainme.repositories.EntryPCRepository;
 import jre.maintainme.utils.strings.Types;
+import jre.maintainme.utils.strings.Units;
 
 @SpringBootApplication
 public class MaintainmeApplication {
@@ -39,7 +40,18 @@ public class MaintainmeApplication {
 				"570AX", 
 				570, 
 				"570-AX 564ZA", 
-				"Intel"
+				"Intel",
+				"i7-5570",
+				6,
+				5.7,
+				Units.Processor.Frequency.Unit.GHZ,
+				"BZ564-2258-949",
+				"Corsair",
+				"HyperX",
+				16,
+				Units.Storage.Size.Unit.GB,
+				Types.PC.RAM.Type.DDR4,
+				"HX-454 161800B"
 			));
 		};
 	}

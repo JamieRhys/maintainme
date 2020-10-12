@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import jre.maintainme.utils.strings.Types;
+import jre.maintainme.utils.strings.Units;
 
 @Entity
 @Table(name = "HARDWARE_PC")
@@ -41,30 +42,44 @@ public class EntryPC extends EntryHardware {
     @Column(name = "entry_processor_manu_name")
     private String processorManufacturerName;
 
-    
+    @Column(name = "entry_processor_model_name")
+    private String processorModelName;
+
+    @Column(name = "entry_processor_cores")
+    private int processorCores;
+
+    @Column(name = "entry_processor_speed")
+    private double processorSpeed;
+
+    @Column(name = "entry_processor_frequency_unit")
+    private Units.Processor.Frequency.Unit processorFrequencyUnit;
+
+    @Column(name = "entry_processor_serial_number")
+    private String processorSerialNumber;
+
+    @Column(name = "entry_ram_manu_name")
+    private String ramManufacturerName;
+
+    @Column(name = "entry_ram_model_name")
+    private String ramModelName;
+
+    @Column(name = "entry_ram_size")
+    private int ramSize;
+
+    @Column(name = "entry_ram_size_unit")
+    private Units.Storage.Size.Unit ramSizeUnit;
+
+    @Column(name = "entry_ram_type")
+    private Types.PC.RAM.Type ramType;
+
+    @Column(name = "entry_ram_serial_number")
+    private String ramSerialNumber;
 
     /**
      * Default Constructor for EntryPC
      */
     public EntryPC() {}
 
-    /**
-     * Constructor for EntryPC 
-     * @param dateAcquired
-     * @param isRetired
-     * @param dateRetired
-     * @param hasBarcode
-     * @param barcode
-     * @param name
-     * @param motherboardManufacturerName
-     * @param motherboardModelName
-     * @param motherboardSize
-     * @param motherboardSerialNumber
-     * @param psuManufacturerName
-     * @param psuModelName
-     * @param psuWatts
-     * @param processorManufacturerName
-     */
     public EntryPC(
         LocalDate dateAcquired,
         boolean isRetired,
@@ -80,7 +95,18 @@ public class EntryPC extends EntryHardware {
         String psuModelName,
         int psuWatts,
         String psuSerialNumber,
-        String processorManufacturerName
+        String processorManufacturerName,
+        String processorModelName,
+        int processorCores,
+        double processorSpeed,
+        Units.Processor.Frequency.Unit processorFrequencyUnit,
+        String processorSerialNumber,
+        String ramManufacturerName,
+        String ramModelName,
+        int ramSize,
+        Units.Storage.Size.Unit ramSizeUnit,
+        Types.PC.RAM.Type ramType,
+        String ramSerialNumber
     ) {
         super();
 
@@ -101,8 +127,19 @@ public class EntryPC extends EntryHardware {
         this.setPsuWatts(psuWatts);
         this.setPsuSerialNumber(psuSerialNumber);
 
+        this.setProcessorManufacturerName(processorManufacturerName);
+        this.setProcessorModelName(processorModelName);
+        this.setProcessorCores(processorCores);
+        this.setProcessorSpeed(processorSpeed);
+        this.setProcessorFrequencyUnit(processorFrequencyUnit);
+        this.setProcessorSerialNumber(processorSerialNumber);
 
-
+        this.setRamManufacturerName(ramManufacturerName);
+        this.setRamModelName(ramModelName);
+        this.setRamSize(ramSize);
+        this.setRamSizeUnit(ramSizeUnit);
+        this.setRamType(ramType);
+        this.setRamSerialNumber(ramSerialNumber);
     }
 
 
@@ -138,13 +175,57 @@ public class EntryPC extends EntryHardware {
 
     public void setPsuWatts(int watts) { this.psuWatts = watts; }
 
+    public String getPsuSerialNumber() { return this.psuSerialNumber; }
+
+    public void setPsuSerialNumber(String sn) { this.psuSerialNumber = sn; }
+
     public String getProcessorManufacturerName() { return this.processorManufacturerName; }
 
     public void setProcessorManufacturerName(String name) { this.processorManufacturerName = name; }
 
-    public String getPsuSerialNumber() { return this.psuSerialNumber; }
+    public String getProcessorModelName() { return this.processorModelName; }
 
-    public void setPsuSerialNumber(String sn) { this.psuSerialNumber = sn; }
+    public void setProcessorModelName(String name) { this.processorModelName = name; }
+
+    public int getProcessorCores() { return this.processorCores; }
+
+    public void setProcessorCores(int cores) { this.processorCores = cores; }
+
+    public double getProcessorSpeed() { return this.processorSpeed; }
+
+    public void setProcessorSpeed(double speed) { this.processorSpeed = speed; }
+
+    public Units.Processor.Frequency.Unit getProcessorFrequencyUnit() { return this.processorFrequencyUnit; }
+
+    public void setProcessorFrequencyUnit(Units.Processor.Frequency.Unit unit) { this.processorFrequencyUnit = unit; }
+
+    public String getProcessorSerialNumber() { return this.processorSerialNumber; }
+
+    public void setProcessorSerialNumber(String sn) { this.processorSerialNumber = sn; }
+
+    public String getRamManufacturerName() { return this.ramManufacturerName; }
+
+    public void setRamManufacturerName(String name) { this.ramManufacturerName = name; }
+
+    public String getRamModelName() { return this.ramModelName; }
+
+    public void setRamModelName(String name) { this.ramModelName = name; }
+
+    public int getRamSize() { return this.ramSize; }
+
+    public void setRamSize(int size) { this.ramSize = size; }
+
+    public Units.Storage.Size.Unit getRamSizeUnit() { return this.ramSizeUnit; }
+
+    public void setRamSizeUnit(Units.Storage.Size.Unit unit) { this.ramSizeUnit = unit; }
+
+    public Types.PC.RAM.Type getRamType() { return this.ramType; }
+
+    public void setRamType(Types.PC.RAM.Type type) { this.ramType = type; }
+
+    public String getRamSerialNumber() { return this.ramSerialNumber; }
+
+    public void setRamSerialNumber(String sn) { this.ramSerialNumber = sn; }
 
     public void printDetails() {
         System.out.println("ENTRY ID: " + this.getId());
