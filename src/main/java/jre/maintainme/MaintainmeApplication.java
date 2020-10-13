@@ -64,7 +64,15 @@ public class MaintainmeApplication {
 				1,
 				Units.Storage.Size.Unit.TB,
 				Types.PC.Storage.Type.HDD,
-				"CB-WD1TB-545-67123BZ"
+				"CB-WD1TB-545-67123BZ",
+				"AMD",
+				"Radeon R 200",
+				"AMDR-200-RXT4800",
+				true,
+				"Blackmagic",
+				"Decklink Duo 2",
+				"DLD2",
+				"254 646 875"
 			);
 			entryPCRepo.save(entryPC);
 		};

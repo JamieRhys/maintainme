@@ -114,6 +114,30 @@ public class EntryPC extends EntryHardware {
     @Column(name = "entry_secondary_storage_serial_number")
     private String secondaryStorageSerialNumber;
 
+    @Column(name = "entry_graphics_card_manu_name")
+    private String graphicsCardManufacturerName;
+
+    @Column(name = "entry_graphics_card_model_name")
+    private String graphicsCardModelName;
+
+    @Column(name = "entry_graphics_card_serial_number")
+    private String graphicsCardSerialNumber;
+
+    @Column(name = "entry_has_broadcast_card")
+    private boolean hasBroadcastCard;
+
+    @Column(name = "entry_broadcast_card_manu_name")
+    private String broadcastCardManufacturerName;
+
+    @Column(name = "entry_broadcast_card_model_name")
+    private String broadcastCardModelName;
+
+    @Column(name = "entry_broadcast_card_serial_number")
+    private String broadcastCardSerialNumber;
+
+    @Column(name = "entry_teamviwer_id")
+    private String teamviewerID;
+
     /**
      * Default Constructor for EntryPC
      */
@@ -158,7 +182,15 @@ public class EntryPC extends EntryHardware {
         int secondaryStorageSize,
         Units.Storage.Size.Unit secondaryStorageSizeUnit,
         Types.PC.Storage.Type secondaryStorageType,
-        String secondaryStorageSerialNumber
+        String secondaryStorageSerialNumber,
+        String graphicsCardManufacturerName,
+        String graphicsCardModelName,
+        String graphicsCardSerialNumber,
+        boolean hasBroadcastCard,
+        String broadcastCardManufacturerName,
+        String broadcastCardModelName,
+        String broadcastCardSerialNumber,
+        String teamviewerID
     ) {
         super();
 
@@ -207,6 +239,17 @@ public class EntryPC extends EntryHardware {
         this.setSecondaryStorageSizeUnit(secondaryStorageSizeUnit);
         this.setSecondaryStorageType(secondaryStorageType);
         this.setSecondaryStorageSerialNumber(secondaryStorageSerialNumber);
+
+        this.setGraphicsCardManufacturerName(graphicsCardManufacturerName);
+        this.setGraphicsCardModelName(graphicsCardModelName);
+        this.setGraphicsCardSerialNumber(graphicsCardSerialNumber);
+
+        this.setHasBroadcastCard(hasBroadcastCard);
+        this.setBroadcastCardManufacturerName(broadcastCardManufacturerName);
+        this.setBroadcastCardModelName(broadcastCardModelName);
+        this.setBroadcastCardSerialNumber(broadcastCardSerialNumber);
+
+        this.setTeamviewerID(teamviewerID);
     }
 
 
@@ -345,6 +388,38 @@ public class EntryPC extends EntryHardware {
     public String getSecondaryStorageSerialNumber() { return this.secondaryStorageSerialNumber; }
 
     public void setSecondaryStorageSerialNumber(String sn) { this.secondaryStorageSerialNumber = sn; }
+
+    public String getGraphicsCardManufacturerName() { return this.graphicsCardManufacturerName; }
+
+    public void setGraphicsCardManufacturerName(String name) { this.graphicsCardManufacturerName = name; }
+
+    public String getGraphicsCardModelName() { return this.graphicsCardModelName; }
+
+    public void setGraphicsCardModelName(String name) { this.graphicsCardModelName = name; }
+
+    public String getGraphicsCardSerialNumber() { return this.graphicsCardSerialNumber; }
+
+    public void setGraphicsCardSerialNumber(String sn) { this.graphicsCardSerialNumber = sn; }
+
+    public boolean getHasBroadcastCard() { return this.hasBroadcastCard; }
+
+    public void setHasBroadcastCard(boolean hasCard) { this.hasBroadcastCard = hasCard; }
+
+    public String getBroadcastCardManufacturerName() { return this.broadcastCardManufacturerName; }
+
+    public void setBroadcastCardManufacturerName(String name) { this.broadcastCardManufacturerName = name; }
+
+    public String getBroadcastCardModelName() { return this.broadcastCardModelName; }
+
+    public void setBroadcastCardModelName(String name) { this.broadcastCardModelName = name; }
+
+    public String getBroadcastCardSerialNumber() { return this.broadcastCardSerialNumber; }
+    
+    public void setBroadcastCardSerialNumber(String sn) { this.broadcastCardSerialNumber = sn; }
+
+    public String getTeamviewerID() { return this.teamviewerID; }
+
+    public void setTeamviewerID(String id) { this.teamviewerID = id; }
 
     public void printDetails() {
         System.out.println("ENTRY ID: " + this.getId());
