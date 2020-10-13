@@ -75,6 +75,24 @@ public class EntryPC extends EntryHardware {
     @Column(name = "entry_ram_serial_number")
     private String ramSerialNumber;
 
+    @Column(name = "entry_primary_storage_manu_name")
+    private String primaryStorageManufacturerName;
+
+    @Column(name = "entry_primary_storage_model_name")
+    private String primaryStorageModelName;
+
+    @Column(name = "entry_primary_storage_size")
+    private int primaryStorageSize;
+
+    @Column(name = "entry_primary_storage_size_unit")
+    private Units.Storage.Size.Unit primaryStorageSizeUnit;
+
+    @Column(name = "entry_primary_storage_type")
+    private Types.PC.Storage.Type primaryStorageType;
+
+    @Column(name = "entry_primary_storage_serial_number")
+    private String primaryStorageSerialNumber;
+
     /**
      * Default Constructor for EntryPC
      */
@@ -106,7 +124,13 @@ public class EntryPC extends EntryHardware {
         int ramSize,
         Units.Storage.Size.Unit ramSizeUnit,
         Types.PC.RAM.Type ramType,
-        String ramSerialNumber
+        String ramSerialNumber,
+        String primaryStorageManufacturerName,
+        String primaryStorageModelName,
+        int primaryStorageSize,
+        Units.Storage.Size.Unit primaryStorageSizeUnit,
+        Types.PC.Storage.Type primaryStorageType,
+        String primaryStorageSerialNumber
     ) {
         super();
 
@@ -140,6 +164,13 @@ public class EntryPC extends EntryHardware {
         this.setRamSizeUnit(ramSizeUnit);
         this.setRamType(ramType);
         this.setRamSerialNumber(ramSerialNumber);
+
+        this.setPrimaryStorageManufacturerName(primaryStorageManufacturerName);
+        this.setPrimaryStorageModelName(primaryStorageModelName);
+        this.setPrimaryStorageSize(primaryStorageSize);
+        this.setPrimaryStorageSizeUnit(primaryStorageSizeUnit);
+        this.setPrimaryStorageType(primaryStorageType);
+        this.setPrimaryStorageSerialNumber(primaryStorageSerialNumber);
     }
 
 
@@ -226,6 +257,30 @@ public class EntryPC extends EntryHardware {
     public String getRamSerialNumber() { return this.ramSerialNumber; }
 
     public void setRamSerialNumber(String sn) { this.ramSerialNumber = sn; }
+
+    public String getPrimaryStorageManufacturerName() { return this.primaryStorageManufacturerName; }
+
+    public void setPrimaryStorageManufacturerName(String name) { this.primaryStorageManufacturerName = name; }
+
+    public String getPrimaryStorageModelName() { return this.primaryStorageModelName; }
+
+    public void setPrimaryStorageModelName(String name) { this.primaryStorageModelName = name; }
+
+    public int getPrimaryStorageSize() { return this.primaryStorageSize; }
+
+    public void setPrimaryStorageSize(int size) { this.primaryStorageSize = size; }
+
+    public Units.Storage.Size.Unit getPrimaryStorageSizeUnit() { return this.primaryStorageSizeUnit; }
+
+    public void setPrimaryStorageSizeUnit(Units.Storage.Size.Unit unit) { this.primaryStorageSizeUnit = unit; }
+
+    public Types.PC.Storage.Type getPrimaryStorageType() { return this.primaryStorageType; }
+
+    public void setPrimaryStorageType(Types.PC.Storage.Type type) { this.primaryStorageType = type; }
+
+    public String getPrimaryStorageSerialNumber() { return this.primaryStorageSerialNumber; }
+
+    public void setPrimaryStorageSerialNumber(String sn) { this.primaryStorageSerialNumber = sn; }
 
     public void printDetails() {
         System.out.println("ENTRY ID: " + this.getId());

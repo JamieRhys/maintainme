@@ -51,7 +51,13 @@ public class MaintainmeApplication {
 				16,
 				Units.Storage.Size.Unit.GB,
 				Types.PC.RAM.Type.DDR4,
-				"HX-454 161800B"
+				"HX-454 161800B",
+				"Kingston",
+				"Red",
+				260,
+				Units.Storage.Size.Unit.GB,
+				Types.PC.Storage.Type.SSD,
+				"KR-260 BR27 RGX"
 			));
 		};
 	}

@@ -99,6 +99,19 @@ public class Types {
             }
         }
 
+        public static class Storage {
+            public static enum Type {
+                SSD("SSD"),
+                HDD("HDD");
+
+                private final String displayValue;
+
+                private Type(String displayValue) { this.displayValue = displayValue; }
+
+                public String getDisplayValue() { return this.displayValue; }
+            }
+        }
+
         public static class OS {
             public static enum Type {
                 WIN,
