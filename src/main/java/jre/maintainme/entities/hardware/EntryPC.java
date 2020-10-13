@@ -93,6 +93,27 @@ public class EntryPC extends EntryHardware {
     @Column(name = "entry_primary_storage_serial_number")
     private String primaryStorageSerialNumber;
 
+    @Column(name = "entry_has_secondary_storage")
+    private boolean hasSecondaryStorage;
+
+    @Column(name = "entry_secondary_storage_manu_name")
+    private String secondaryStorageManufacturerName;
+
+    @Column(name = "entry_secondary_storage_model_name")
+    private String secondaryStorageModelName;
+
+    @Column(name = "entry_secondary_storage_size")
+    private int secondaryStorageSize;
+
+    @Column(name = "entry_secondary_storage_size_unit")
+    private Units.Storage.Size.Unit secondaryStorageSizeUnit;
+
+    @Column(name = "entry_secondary_storage_type")
+    private Types.PC.Storage.Type secondaryStorageType;
+
+    @Column(name = "entry_secondary_storage_serial_number")
+    private String secondaryStorageSerialNumber;
+
     /**
      * Default Constructor for EntryPC
      */
@@ -130,7 +151,14 @@ public class EntryPC extends EntryHardware {
         int primaryStorageSize,
         Units.Storage.Size.Unit primaryStorageSizeUnit,
         Types.PC.Storage.Type primaryStorageType,
-        String primaryStorageSerialNumber
+        String primaryStorageSerialNumber,
+        boolean hasSecondaryStorage,
+        String secondaryStorageManufacturerName,
+        String secondaryStorageModelName,
+        int secondaryStorageSize,
+        Units.Storage.Size.Unit secondaryStorageSizeUnit,
+        Types.PC.Storage.Type secondaryStorageType,
+        String secondaryStorageSerialNumber
     ) {
         super();
 
@@ -171,6 +199,14 @@ public class EntryPC extends EntryHardware {
         this.setPrimaryStorageSizeUnit(primaryStorageSizeUnit);
         this.setPrimaryStorageType(primaryStorageType);
         this.setPrimaryStorageSerialNumber(primaryStorageSerialNumber);
+
+        this.setHasSecondaryStorage(hasSecondaryStorage);
+        this.setSecondaryStorageManufacturerName(secondaryStorageManufacturerName);
+        this.setSecondaryStorageModelName(secondaryStorageModelName);
+        this.setSecondaryStorageSize(secondaryStorageSize);
+        this.setSecondaryStorageSizeUnit(secondaryStorageSizeUnit);
+        this.setSecondaryStorageType(secondaryStorageType);
+        this.setSecondaryStorageSerialNumber(secondaryStorageSerialNumber);
     }
 
 
@@ -281,6 +317,34 @@ public class EntryPC extends EntryHardware {
     public String getPrimaryStorageSerialNumber() { return this.primaryStorageSerialNumber; }
 
     public void setPrimaryStorageSerialNumber(String sn) { this.primaryStorageSerialNumber = sn; }
+
+    public boolean getHasSecondaryStorage() { return this.hasSecondaryStorage; }
+
+    public void setHasSecondaryStorage(boolean hasSecondaryStorage) { this.hasSecondaryStorage = hasSecondaryStorage; }
+
+    public String getSecondaryStorageManufacturerName() { return this.secondaryStorageManufacturerName; }
+
+    public void setSecondaryStorageManufacturerName(String name) { this.secondaryStorageManufacturerName = name; }
+
+    public String getSecondaryStorageModelName() { return this.secondaryStorageModelName; }
+
+    public void setSecondaryStorageModelName(String name) { this.secondaryStorageModelName = name; }
+
+    public int getSecondaryStorageSize() { return this.secondaryStorageSize; }
+
+    public void setSecondaryStorageSize(int size) { this.secondaryStorageSize = size; }
+
+    public Units.Storage.Size.Unit getSecondaryStorageSizeUnit() { return this.secondaryStorageSizeUnit; }
+
+    public void setSecondaryStorageSizeUnit(Units.Storage.Size.Unit unit) { this.secondaryStorageSizeUnit = unit; }
+
+    public Types.PC.Storage.Type getSecondaryStorageType() { return this.secondaryStorageType; }
+
+    public void setSecondaryStorageType(Types.PC.Storage.Type type) { this.secondaryStorageType = type; }
+
+    public String getSecondaryStorageSerialNumber() { return this.secondaryStorageSerialNumber; }
+
+    public void setSecondaryStorageSerialNumber(String sn) { this.secondaryStorageSerialNumber = sn; }
 
     public void printDetails() {
         System.out.println("ENTRY ID: " + this.getId());

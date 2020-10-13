@@ -26,7 +26,7 @@ public class MaintainmeApplication {
 	@Bean
 	CommandLineRunner runner() {
 		return args -> {
-			entryPCRepo.save(new EntryPC(LocalDate.now(ZoneId.of("Europe/London")), 
+			EntryPC entryPC = new EntryPC(LocalDate.now(ZoneId.of("Europe/London")), 
 				false, 
 				null, 
 				true, 
@@ -57,8 +57,16 @@ public class MaintainmeApplication {
 				260,
 				Units.Storage.Size.Unit.GB,
 				Types.PC.Storage.Type.SSD,
-				"KR-260 BR27 RGX"
-			));
+				"KR-260 BR27 RGX",
+				true,
+				"Western Digital",
+				"Caviar Blue",
+				1,
+				Units.Storage.Size.Unit.TB,
+				Types.PC.Storage.Type.HDD,
+				"CB-WD1TB-545-67123BZ"
+			);
+			entryPCRepo.save(entryPC);
 		};
 	}
 }
