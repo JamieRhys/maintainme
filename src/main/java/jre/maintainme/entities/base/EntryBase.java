@@ -30,7 +30,7 @@ public class EntryBase {
     private boolean isRetired;
 
     @Column(name = "entry_date_retired")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateRetired;
 
     public long getId() { return this.id; }

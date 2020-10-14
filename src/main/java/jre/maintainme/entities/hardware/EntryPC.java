@@ -12,7 +12,7 @@ import jre.maintainme.utils.strings.Units;
 @Entity
 @Table(name = "HARDWARE_PC")
 public class EntryPC extends EntryHardware {
-    @Column(name = "entry_name")
+    @Column(name = "entry_name", unique = true)
     private String name;
 
     @Column(name = "entry_motherboard_manu_name")

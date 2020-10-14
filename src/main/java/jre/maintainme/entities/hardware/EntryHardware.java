@@ -12,7 +12,7 @@ public class EntryHardware extends EntryBase {
     @Column(name = "entry_hasBarcode")
     private boolean hasBarcode;
 
-    @Column(name = "entry_barcode")
+    @Column(name = "entry_barcode", unique = true)
     private String barcode;
 
     public EntryHardware() {
