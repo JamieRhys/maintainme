@@ -45,6 +45,7 @@ public class MaintainmeApplication {
 
 	private void initialiseUserDB() {
 		entryUserRepo.save(new EntityUser("admin", "$2a$10$DOXW7RM6dl4cA7pNlcCJBuMwn37few43dcv3GoxL2Q.TxjMLsXbB6", "ADMIN"));
+		entryUserRepo.save(new EntityUser("jamie", "$2a$10$Q2w8k8duOz6eZaEkxxB01OQI1hOLLTxT8iw/VCz4FwHwFTX8oB8Oe", "ADMIN"));
 	}
 
 	private void initialisePCDB() {
