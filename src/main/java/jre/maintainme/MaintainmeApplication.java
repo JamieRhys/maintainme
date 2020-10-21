@@ -11,10 +11,12 @@ import org.springframework.context.annotation.Bean;
 
 import jre.maintainme.entities.hardware.EntryPC;
 import jre.maintainme.entities.software.EntrySoftware;
+import jre.maintainme.entities.software.EntryVersion;
 import jre.maintainme.entities.users.EntityUser;
 import jre.maintainme.repositories.EntryPCRepository;
 import jre.maintainme.repositories.EntrySoftwareRepository;
 import jre.maintainme.repositories.EntryUserRepository;
+import jre.maintainme.repositories.EntryVersionRepository;
 import jre.maintainme.utils.strings.Types;
 import jre.maintainme.utils.strings.Units;
 
@@ -23,6 +25,7 @@ public class MaintainmeApplication {
 	@Autowired private EntryPCRepository entryPCRepo;
 	@Autowired private EntryUserRepository entryUserRepo;
 	@Autowired private EntrySoftwareRepository entrySoftwareRepo;
+	@Autowired private EntryVersionRepository entryVersionRepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(MaintainmeApplication.class, args);
@@ -30,15 +33,48 @@ public class MaintainmeApplication {
 
 	@Bean
 	CommandLineRunner runner() {
+		
+		return args -> {
+			testDB();
+		};
+	}
+
+	private void testDB() {
 		entryPCRepo.deleteAll();
 		entryUserRepo.deleteAll();
 		entrySoftwareRepo.deleteAll();
-		
-		return args -> {
-			initialiseUserDB();
-			initialisePCDB();
-			initialiseSoftwareDB();
-		};
+		entryVersionRepo.deleteAll();
+
+		initialiseUserDB();
+		initialisePCDB();
+		initialiseSoftwareDB();
+		initialiseVersionDB();
+	}
+
+	private void initialiseVersionDB() {
+		entryVersionRepo.save(new EntryVersion(
+			"Kinetic Pixel",
+			"Pixellator",
+			"2.23"
+		));
+
+		entryVersionRepo.save(new EntryVersion(
+			"Kinetic Pixel",
+			"Maintain Me",
+			"0.0.1"
+		));
+
+		entryVersionRepo.save(new EntryVersion(
+			"Ventuz",
+			"Ventuz",
+			"6.07.05"
+		));
+
+		entryVersionRepo.save(new EntryVersion(
+			"Blackmagic",
+			"Desktop Video",
+			"11.6"
+		));
 	}
 
 	private void initialiseSoftwareDB() {
