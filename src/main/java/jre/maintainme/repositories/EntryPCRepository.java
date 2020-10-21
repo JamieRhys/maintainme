@@ -10,7 +10,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import jre.maintainme.entities.hardware.EntryPC;
 import jre.maintainme.utils.strings.Types;
-import jre.maintainme.utils.strings.Units;
 
 @RepositoryRestResource
 public interface EntryPCRepository extends JpaRepository<EntryPC, Long> {
@@ -46,31 +45,23 @@ public interface EntryPCRepository extends JpaRepository<EntryPC, Long> {
 
     public List<EntryPC> findByProcessorManufacturerName(@Param("name") String name);
 
-    //public List<EntryPC> findByProcessorModel(String name);
+    public List<EntryPC> findByProcessorModelName(@Param("name") String name);
 
-    //public List<EntryPC> findByProcessorCores(int cores);
+    public EntryPC findByProcessorSerialNumber(@Param("sn") String sn);
 
-    //public List<EntryPC> findByProcessorSpeed(double speed, Units.Processor.Frequency.Unit unit);
+    public List<EntryPC> findByRamManufacturerName(@Param("name") String name);
 
-    //public EntryPC findByProcessorSerialNumber(String sn);
+    public List<EntryPC> findByRamModelName(@Param("name") String name);
 
-    //public List<EntryPC> findByRAMManufacturer(String name);
+    public List<EntryPC> findByRamType(@Param("type") Types.PC.RAM.Type type); // FIXME: Fails to convert from String to Type. 
 
-    //public List<EntryPC> findByRAMModel(String name);
+    public EntryPC findByRamSerialNumber(@Param("sn") String sn); // FIXME: Doesn't return anything.
 
-    //public List<EntryPC> findByRAMSize(int size, Units.Storage.Size.Unit unit);
+    public List<EntryPC> findByPrimaryStorageManufacturerName(@Param("name") String name);
 
-    //public List<EntryPC> findByRAMType(Types.PC.RAM.Type type);
+    public List<EntryPC> findByPrimaryStorageModelName(@Param("name") String name);
 
-    //public EntryPC findByRAMSerialNumber(String sn);
+    public List<EntryPC> findByPrimaryStorageType(@Param("name") Types.PC.Storage.Type type); // FIXME: Fails to convert from String to Type.
 
-    //public List<EntryPC> findByPrimaryStorageManufacturerName(String name);
-
-    //public List<EntryPC> findByPrimaryStorageModelName(String name);
-
-    //public List<EntryPC> findByPrimaryStorageSize(int size, Units.Storage.Size.Unit unit);
-
-   //public List<EntryPC> findByPrimaryStorageType(Types.PC.Storage.Type type);
-
-    //public EntryPC findByPrimaryStorageSerialNumber(String sn);
+    public EntryPC findByPrimaryStorageSerialNumber(@Param("name") String sn);
 }

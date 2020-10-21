@@ -1,5 +1,7 @@
 package jre.maintainme.entities.hardware;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
@@ -15,8 +17,17 @@ public class EntryHardware extends EntryBase {
     @Column(name = "entry_barcode", unique = true)
     private String barcode;
 
-    public EntryHardware() {
-        this.setPhysicalType(Types.Physical.Type.HARDWARE);
+    public EntryHardware(
+        Types.Physical.Type physicalType,
+        LocalDate dateAcquired,
+        boolean isRetired,
+        LocalDate dateRetired,
+        boolean hasBarcode,
+        String barcode
+    ) {
+        super(physicalType, dateAcquired, isRetired, dateRetired);
+        this.setHasBarcode(hasBarcode);
+        this.setBarcode(barcode);
     }
 
     public boolean getHasBarcode() { return this.hasBarcode; }

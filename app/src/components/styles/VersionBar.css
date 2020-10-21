@@ -1,0 +1,16 @@
+.vb-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    background: var(--colour-version-bar);
+    color: var(--colour-white);
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+}
+
+.vb-container > p {
+    margin: 0;
+    padding: 0;
+}

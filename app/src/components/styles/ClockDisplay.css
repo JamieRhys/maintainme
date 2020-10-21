@@ -1,0 +1,9 @@
+.clock-display {
+    margin: 0;
+    padding: 0;
+}
+
+.clock-display > p {
+    margin: 0;
+    padding: 0;
+}

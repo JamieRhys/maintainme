@@ -33,6 +33,18 @@ public class EntryBase {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateRetired;
 
+    public EntryBase(
+        Types.Physical.Type physicalType,
+        LocalDate dateAcquired,
+        boolean isRetired,
+        LocalDate dateRetired
+    ) {
+        this.physicalType = physicalType;
+        this.dateAcquired = dateAcquired;
+        this.isRetired = isRetired;
+        this.dateRetired = dateRetired;
+    }
+
     public long getId() { return this.id; }
 
     public void setId(long id) { this.id = id; }

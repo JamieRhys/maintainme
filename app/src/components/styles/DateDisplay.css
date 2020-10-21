@@ -1,0 +1,9 @@
+.date-display {
+    padding: 0;
+    margin:0;
+}
+
+.date-display > p {
+    padding: 0;
+    margin: 0;
+}

@@ -29,13 +29,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        //http.csrf().disable().authorizeRequests().anyRequest().permitAll(); // TODO: Remove this when security has been implemented
-        //http.headers().frameOptions().disable(); // TODO: Remove this when security has been implemented.
-
-        http.cors().and().authorizeRequests().antMatchers(HttpMethod.POST, "/login").permitAll()
-            .anyRequest().authenticated().and().addFilterBefore(new LoginFilter("/login", authenticationManager()),
-                                                                                UsernamePasswordAuthenticationFilter.class)
+        http.cors().and().authorizeRequests().anyRequest().permitAll();
+        /*
+        http.csrf().disable().cors().and().authorizeRequests().antMatchers(HttpMethod.POST, "/login").permitAll()
+            .anyRequest().authenticated()
+            .and()
+            .addFilterBefore(new LoginFilter("/login", authenticationManager()),
+            UsernamePasswordAuthenticationFilter.class)
             .addFilterBefore(new AuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+        */
+        
     }
     
     @Autowired

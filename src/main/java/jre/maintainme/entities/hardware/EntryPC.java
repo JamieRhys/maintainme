@@ -1,6 +1,7 @@
 package jre.maintainme.entities.hardware;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -138,10 +139,16 @@ public class EntryPC extends EntryHardware {
     @Column(name = "entry_teamviwer_id")
     private String teamviewerID;
 
-    /**
-     * Default Constructor for EntryPC
-     */
-    public EntryPC() {}
+    public EntryPC() {
+        super(
+            Types.Physical.Type.HARDWARE,
+            LocalDate.now(ZoneId.of("Europe/London")),
+            false,
+            null,
+            false,
+            ""
+        );
+    }
 
     public EntryPC(
         LocalDate dateAcquired,
@@ -192,13 +199,15 @@ public class EntryPC extends EntryHardware {
         String broadcastCardSerialNumber,
         String teamviewerID
     ) {
-        super();
+        super(
+            Types.Physical.Type.HARDWARE,
+            dateAcquired,
+            isRetired,
+            dateRetired,
+            hasBarcode,
+            barcode
+        );
 
-        this.setDateAcquired(dateAcquired);
-        this.setIsRetired(isRetired);
-        this.setDateRetired(dateRetired);
-        this.setHasBarcode(hasBarcode);
-        this.setBarcode(barcode);
         this.setName(name);
 
         this.setMotherboardManufacturerName(motherboardManufacturerName);
